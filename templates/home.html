@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Conductance Calculator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style media="screen">
+
+      .wrapper0 {
+        margin-right: 10%;
+        margin-bottom: 40px;
+        margin-top: 40px;
+        margin-left: 10%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        padding-bottom: 10px;
+        }
+      .wrapper1 {
+        padding-right: 5%;
+        padding-left: 5%;
+        padding-bottom: 10px;
+        height: auto;
+      }
+      #h0 {
+      padding-top: 20px;
+      text-decoration: underline;
+      font-weight: 800;
+      /* Change font */
+      }
+    .main-back-blog{
+      background-image: linear-gradient(rgba(30,0,20,0.8),rgba(50,40,0,0.5)),url("{{url_for('static', filename='bgimg.jpeg')}}");
+      background-repeat: no-repeat;
+      background-position: center;
+     background-size: cover;
+    }
+    .footer {
+      position:relative;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: #111;
+      color: white;
+      text-align: center;
+    }
+    header{
+
+      background-color: white;
+      width: 100%;height: 100px;
+    }
+    header .header-brand{
+      font-family: catamaran;font-size: 24px;font-weight: 900;
+      color: #111;
+      text-align: center;
+      display: block;
+      width: 300px;
+      margin: 0 auto;padding: 20px 0;
+    }
+    header .header-brand:hover{
+      color: #2BB5CA;
+      transition : color 0.5s;
+    }
+
+    header nav ul{
+     display: block;
+     margin: 0 auto;
+     width: fit-content;
+    }
+
+
+    header nav ul li{
+
+      float: left;
+      display: inline-block;
+      padding: 0 16px;
+    }
+
+    header nav ul li a{
+      cursor: pointer;
+      font-family: catamaran;font-size: 16px;font-weight: 900;
+      color: #111;
+    }
+    header nav ul li a:hover{
+      color: #2BB5CA;
+      transition : color 0.5s;
+    }
+
+    header .header-pro{
+      display: none;
+    }
+    header .header-pro-text{
+      display: none;
+    }
+    @media only screen and (min-width: 1000px){
+      *{
+        text-decoration: none;
+        list-style-type:none;
+      }
+      header .header-brand{
+        line-height: 38px;
+        text-align: left;float: left;
+        margin: 31px;padding: 0px 20px 0px 20px;
+        border-right: 3px solid #111;
+      }
+      header .header-brand:hover{
+        color: #2BB5CA;
+        transition : color 0.5s;
+      }
+      header nav ul{
+      float: left;
+      margin: 20px 0px;
+      }
+
+      header nav ul li a{
+        line-height: 60px;
+      }
+      header nav ul li a:hover{
+      color: #2BB5CA;
+      transition : color 0.5s;
+      }
+      header .header-pro{
+        font-family: catamaran;font-size: 16px;font-weight: 900;
+        color: #111;
+        line-height: 38px;
+        float: right;
+        display: block;
+        margin-right: 40px;margin-top: 30px;padding: 0 20px;
+        border: 1px solid #111;
+      }
+      header .header-pro-text{
+        font-family: catamaran;font-size: 16px;font-weight: 900;
+        color: #111;
+        line-height: 38px;
+        float: right;
+        display: block;
+        margin-right: 40px;margin-top: 30px;padding: 0 20px;
+        order: 1px solid #111;
+      }
+      header .header-pro:hover{
+
+
+        color: #111;
+        font-size: 20px;
+
+        border: 2px solid #2BB5CA;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/answer" class="header-brand">Conductance Calculator</a>
+    <nav>
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/report">Report</a></li>
+        <li><a href="/team">Team members</a></li>
+      </ul>
+      <p class="header-pro-text">< --- Click here to solve a ciruit </p>
+      <a href="/answer" class="header-pro">Solve</a>
+    </nav>
+  </header>
+
+ <div class="main-back-blog">
+
+ <div id="demo" style="width: 80%; margin:auto" class="carousel slide" data-ride="carousel">
+ <!-- Indicators -->
+   <ul class="carousel-indicators">
+     <li data-target="#demo" data-slide-to="0" style="filter: invert(100%);" class="active"></li>
+     <li data-target="#demo" style="filter: invert(100%);" data-slide-to="1"></li>
+     <li data-target="#demo" style="filter: invert(100%);" data-slide-to="2"></li>
+   </ul>
+   <!-- The slideshow -->
+   <div class="carousel-inner" style=" width:80%;margin:auto;">
+     <div class="carousel-item active center">
+       <img style="max-width:100%;max-height:100%;"src="{{url_for('static', filename='1.jpg')}}" >
+     </div>
+     <div class="carousel-item">
+       <img style="max-width:100%;max-height:100%;"src="{{url_for('static', filename='car2.png')}}" >
+     </div>
+   </div>
+   <!-- Left and right controls -->
+   <a class="carousel-control-prev" href="#demo" data-slide="prev">
+   <span class="carousel-control-prev-icon"></span>
+   </a>
+   <a class="carousel-control-next" href="#demo" data-slide="next">
+   <span class="carousel-control-next-icon"></span>
+   </a>
+ </div>
+
+ </div>
+ <div class="hero">
+
+
+  <div class="wrapper0" style="margin-top:20px;">
+    <div class="wrapper1">
+      <p id="h0">Conductance</p>
+      <p style="text-align: justify;">The conductance between two points is defined as the gas flow rate flowing through a device divided by the pressure drop that is driving it. Therefore, the dimensions that describe conductance are the same as pumping speed (volume per unit time) but conductance is a phenomenon usually used to describe piping and openings, not the vacuum pump.</p>
+
+    </div>
+    </div>
+</div>
+  <div class="footer">
+    <p>Made for Ph202 Project</p>
+  </div>
+</body>
+</html>

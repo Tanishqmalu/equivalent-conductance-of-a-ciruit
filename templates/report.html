@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Conductance Calculator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+<style media="screen">
+
+
+      .carousel{
+        margin-top: 10px;
+      }
+      .carousel-inner{
+        height: 1400px;
+      }
+      .carousel-caption{
+        color: black;
+        top: 50%;
+      }
+      .wrapper0 {
+
+        color: black;
+        margin-right: 10%;
+        margin-bottom: 40px;
+        margin-top: 40px;
+        margin-left: 10%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        padding-bottom: 10px;
+        height:auto;
+              }
+      .wrapper1 {
+        text-align: justify;
+        padding-right: 5%;
+        padding-left: 5%;
+        padding-bottom: 10px;
+        height: auto;
+      }
+      .formula{
+        text-align:center !important;
+
+      }
+      #h0 {
+      padding-top: 20px;
+      text-decoration: underline;
+      font-weight: 800;
+      /* Change font */
+      }
+    .main-back-blog{
+      background-image: linear-gradient(rgba(30,0,20,0.8),rgba(50,40,0,0.5)),url("{{url_for('static', filename='bgimg.jpeg')}}");
+      background-repeat: no-repeat;
+      background-position: center;
+     background-size: cover;
+    }
+    .footer {
+      position:relative;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: #111;
+      color: white;
+      text-align: center;
+    }
+    header{
+
+      background-color: white;
+      width: 100%;height: 100px;
+    }
+    header .header-brand{
+      font-family: catamaran;font-size: 24px;font-weight: 900;
+      color: #111;
+      text-align: center;
+      display: block;
+      width: 300px;
+      margin: 0 auto;padding: 20px 0;
+    }
+    header .header-brand:hover{
+      color: #2BB5CA;
+      transition : color 0.5s;
+    }
+
+    header nav ul{
+     display: block;
+     margin: 0 auto;
+     width: fit-content;
+    }
+
+
+    header nav ul li{
+
+      float: left;
+      display: inline-block;
+      padding: 0 16px;
+    }
+
+    header nav ul li a{
+      cursor: pointer;
+      font-family: catamaran;font-size: 16px;font-weight: 900;
+      color: #111;
+    }
+    header nav ul li a:hover{
+      color: #2BB5CA;
+      transition : color 0.5s;
+    }
+
+    header .header-pro{
+      display: none;
+    }
+    header .header-pro-text{
+      display: none;
+    }
+    @media only screen and (min-width: 1000px){
+      .carousel{
+        margin-top: 10px;
+      }
+      .carousel-inner{
+        height: 800px;
+      }
+      .carousel-caption{
+        color: black;
+        top: 50%;
+      }
+      .wrapper0 {
+
+        color: black;
+        margin-right: 10%;
+        margin-bottom: 40px;
+        margin-top: 40px;
+        margin-left: 10%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        padding-bottom: 10px;
+        height:auto;
+              }
+      .wrapper1 {
+        text-align: justify;
+        padding-right: 5%;
+        padding-left: 5%;
+        padding-bottom: 10px;
+        height: auto;
+      }
+      .formula{
+        text-align:center !important;
+
+      }
+      *{
+        text-decoration: none;
+        list-style-type:none;
+      }
+      header .header-brand{
+        line-height: 38px;
+        text-align: left;float: left;
+        margin: 31px;padding: 0px 20px 0px 20px;
+        border-right: 3px solid #111;
+      }
+      header .header-brand:hover{
+        color: #2BB5CA;
+        transition : color 0.5s;
+      }
+      header nav ul{
+      float: left;
+      margin: 20px 0px;
+      }
+
+      header nav ul li a{
+        line-height: 60px;
+      }
+      header nav ul li a:hover{
+      color: #2BB5CA;
+      transition : color 0.5s;
+      }
+      header .header-pro{
+        font-family: catamaran;font-size: 16px;font-weight: 900;
+        color: #111;
+        line-height: 38px;
+        float: right;
+        display: block;
+        margin-right: 40px;margin-top: 30px;padding: 0 20px;
+        border: 1px solid #111;
+      }
+      header .header-pro-text{
+        font-size: 16px;font-weight: 900;
+        color: #111;
+        line-height: 38px;
+        float: right;
+        display: block;
+        margin-right: 40px;margin-top: 30px;padding: 0 20px;
+        order: 1px solid #111;
+      }
+      header .header-pro:hover{
+        color: #111;
+        font-size: 20px;
+        border: 2px solid #2BB5CA;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="/answer" class="header-brand">Conductance Calculator</a>
+    <nav>
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/report">Report</a></li>
+        <li><a href="/team">Team members</a></li>
+      </ul>
+      <p class="header-pro-text">< --- Click here to solve a ciruit </p>
+      <a href="/answer" class="header-pro">Solve</a>
+    </nav>
+  </header>
+<div class="wrapper0">
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="carousel-caption">
+        <h3>Conductance</h3>
+        <p class="wrapper1">Any pipe or duct offers a certain resistance to gas flow of any type. This resistance causes a pressure drop along the pipe. If F is the volume flow rate of gas
+flowing per sec across any cross section of the pipe and P is the pressure at the
+section, the quantity of gas passing per sec is: -
+</p>
+<p class="wrapper1 formula">\[Q = FP\]</p>
+<p class="wrapper1">The resistance R (or impedance) of a length of pipe is defined by: -</p>
+<p class="formula">\[R = { P1 - P2 \over Q}\]</p>
+<p class="wrapper1">
+where P1 and P2 are the pressures at ends of the pipe.
+Thus R has units of s/L. The reciprocal of R is called conductance and is designated by the symbol C.<br><br></p>
+<p class="formula">\[C = { Q \over \triangle P} = Quantity \space of \space flow \space difference\]</p>
+<p class="wrapper1">
+Conductance has units of volumetric flow rate divided by pressure drop, expressed as liters per second. The conductance between two points is defined as the gas flow rate flowing through a device divided by the pressure drop that is driving it.
+
+The time required to draw a vacuum depends on the pumping speed. Due to the flow resistance (inverse of conductance) caused by the necessary separators, valves, cold traps and piping, the effective pumping speed is always less than the rated inlet speed of the pump and also less than the conductance of the most restrictive component (at times considerably less). Therefore in order to achieve the desired pumping speed, it is not sufficient to simply select a pump – too small a conductance can make a required speed impossible to achieve with any pump.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-caption">
+        <h3>Conductance in Parallel</h3>
+        <br>
+        <p class="wrapper1"> Consider two pipes having conductances Ci and C2. The mass flow in each pipe is given by : -</p>
+        <p class="formula">\[Q1 = C1P and Q2 = C2P\] </p>
+        <p class="wrapper1"> The total flow is : - \[Q1 and Q2 = (C1 + C2)P\]<br><br>
+        If the two pipes were replaced by a single pipe of conductance, Ct which would give the same flow, then: -</p>
+        <p class="formula">\[Qt= CtP\]</p>
+        <p class="wrapper1"> where Ct is the total conductance and the subscript t signifies total conductance
+or flow for the element.
+For series connection of components, pipes, or orifices, the total conductance is given by : -</p>
+<p class="formula"> \[Ct= C1 + C2 + C3 ....\]<br></p>
+<img src="{{url_for('static', filename='parallel.jpg')}}" alt="">
+
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-caption">
+        <h3>Conductance in Series</h3>
+        <br>
+        <p class="wrapper1">Consider two conductances C1 and C2 in series; consisting, for example, of a pipe
+        joined at one end to another pipe of different diameter. Let P1 and P2 be the pressure drops along pipes 1 and 2, respectively. Let Q1 and Q2 be the mass flow rates.
+        Let Pt be the total pressure drop in series, and Qt be the corresponding mean
+        flow rate.
+        </p>
+        <p class="formula">\[P1 = { Q1 \over C1}, \space P2 = { Q2 \over C2}\] </p>
+        <p class="wrapper1">But</p>
+        <p class="formula">\[ \triangle Pt = \triangle P1 + \triangle P2\] </p>
+        <p class="wrapper1">Furthermore, the mass flow rate must be same throughout the system, otherwise gas would accumulate in the system. Hence,</p>
+        <p class="formula"> \[Qt = Q1 = Q2\]</p>
+        <p class="wrapper1">Thus,</p>
+        <p class="formula">\[{ Qt \over Ct} = {Q1 \over C1} + {Q2 \over C2}\]<br>\[{ Qt \over Ct} = {Qt \over C1} + {Qt \over C2}\]<br>\[{ 1 \over Ct} = {1 \over C1} + {1 \over C2}\]</p>
+        <p class="wrapper1"> where Ct is the total conductance and the subscript t signifies total conductance
+        or flow for the element.
+      </div>
+    </div>
+
+
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" style="filter: invert(100%);"aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" style="filter: invert(100%);"aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+
+</body>
+</html>
