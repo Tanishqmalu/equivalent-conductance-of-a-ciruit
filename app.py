@@ -18,7 +18,7 @@ def fin(ind,s,lis):
             x=ord(s[ind])-48
             num+=x/div
             div*=10
-            ind+=1
+            ind=ind+1
     return num
 
 def sol(s,lis):
