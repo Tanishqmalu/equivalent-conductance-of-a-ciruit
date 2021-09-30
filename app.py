@@ -10,7 +10,7 @@ def fin(ind,s,lis):
         ind+=1
 
     if s[ind]=='.':
-        lis[2]+=1
+        lis[2]=lis[2]+1
         ind+=1
         div=10.000
         while ord(s[ind])<=57 and ord(s[ind])>=48:
