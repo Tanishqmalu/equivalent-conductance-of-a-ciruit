@@ -11,9 +11,9 @@ def fin(ind,s):
 		div=10.000
 		while ord(s[ind])<=57 and ord(s[ind])>=48:
 			x=ord(s[ind])-48
-			num+=x/div
-			div*=10
-			ind+=1
+			num=num+x/div
+			div=div*10
+			ind=ind+1
 
 
 	return num
@@ -42,7 +42,7 @@ while lis[1]!=-1:
 	print(ss)
 	num=0
 	a='*'
-	j+=1
+	j=j+1
 	for i in range(j,k):
 		if ord(s[i])<=57 and ord(s[i])>=48 and a=='*':
 			store=fin(i,s)
