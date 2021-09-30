@@ -1,7 +1,7 @@
 lis =[-1,-1]
 def fin(ind,s):
 	num=0.0
-	while ord(s[ind])<=57 and ord(s[ind])>=48:
+	while ord(s[ind])<58 and ord(s[ind])>47:
 		x=ord(s[ind])-48
 		num=num*10 + x
 		ind+=1
