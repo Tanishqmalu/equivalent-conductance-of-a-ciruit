@@ -58,7 +58,7 @@ def getans(s):
             elif ord(s[i])<=57 and ord(s[i])>=48 and a=='|':
                 store=fin(i,s,lis)
                 num+=store
-                i+=lis[2]
+                i= i+lis[2]
                 lis[2]=0
             elif ord(s[i])<=57 and ord(s[i])>=48 and a=='+':
                 store=fin(i,s,lis)
