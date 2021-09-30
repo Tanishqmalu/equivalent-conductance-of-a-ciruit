@@ -16,8 +16,8 @@ def fin(ind,s,lis):
         while ord(s[ind])<=57 and ord(s[ind])>=48:
             lis[2]+=1
             x=ord(s[ind])-48
-            num+=x/div
-            div*=10
+            num=num+x/div
+            div=div*10
             ind=ind+1
     return num
 
@@ -43,7 +43,7 @@ def getans(s):
         j=lis[1]
         k=lis[0]
         if j!=0:
-            ss+=s[:j]
+            ss=ss+s[:j]
         # print(ss)
         num=0
         a='*'
